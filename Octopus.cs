@@ -62,19 +62,19 @@ namespace VirtualPet
             Console.WriteLine("Tank Cleanliness" + "\n" + this.tankCleanliness + "\n");
         }
 
-        public void feedOctopus() //feed octopus
+        public void feedOctopus() //when user feeds the ocotpus, they are less hungry but the tank is also dirtier
         {
             this.hunger--;
             this.tankCleanliness++;
         }
 
-        public void playTime() //play with octopus
+        public void playTime() //when ocotpus plays, it is less bored but gets hungrier
         {
             this.boredom--;
             this.hunger++;
         }
 
-        public void cleanTank() //clean the dirty tank
+        public void cleanTank() //clean the dirty tank, no effect on other properties
         {
             this.tankCleanliness--;
         }
