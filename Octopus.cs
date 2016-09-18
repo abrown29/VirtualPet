@@ -10,23 +10,15 @@ namespace VirtualPet
     {
         //fields
         private string name;
-        private string color;
         private int hunger;
         private int boredom;
         private int tankCleanliness;
-        private int health;
 
         //properties
         public string Name //user can choose name
         {
             get { return this.name; }
             set { this.name = value; }
-        }
-
-        public string Color //user can choose color
-        {
-            get { return this.color; }
-            set { this.color = value; }
         }
 
         public int Hunger
@@ -46,17 +38,13 @@ namespace VirtualPet
             get { return this.tankCleanliness; }
             set { this.tankCleanliness = value; }
         }
-
-        public int Health
-        {
-            get { return this.health; }
-            set { this.health = value; }
-        }
         
         //constructors
-        public Octopus()
+        public Octopus(int hunger, int boredom, int tankCleanliness)
         {
-          
+            this.hunger = 5;
+            this.boredom = 5;
+            this.tankCleanliness = 1;
         }
         //methods
 
@@ -66,10 +54,29 @@ namespace VirtualPet
             this.name = Console.ReadLine();
         }
 
-        public void getColor() //gets color from user and stores it
+        public void viewStats() //shows baseline pet statistics
         {
-            Console.WriteLine("What color is your octopus?");
-            this.color = Console.ReadLine();
+            Console.WriteLine(this.name + " the octopus" + "\n");
+            Console.WriteLine("Hunger" + "\n" + this.hunger + "\n");
+            Console.WriteLine("Boredom" + "\n" + this.boredom + "\n");
+            Console.WriteLine("Tank Cleanliness" + "\n" + this.tankCleanliness + "\n");
+        }
+
+        public void feedOctopus() //feed octopus
+        {
+            this.hunger--;
+            this.tankCleanliness++;
+        }
+
+        public void playTime() //play with octopus
+        {
+            this.boredom--;
+            this.hunger++;
+        }
+
+        public void cleanTank() //clean the dirty tank
+        {
+            this.tankCleanliness--;
         }
     }
 }
